@@ -37,7 +37,7 @@ This project is a web-based application designed to visualize the IEEE 754 singl
 
 ## Live Demo
 
-If a live demo is hosted, provide the link here.
+https://ritiksingh-deos.github.io/Single-Precision/
 
 ## License
 
