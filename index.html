@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPR</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="red-circle"></div>
+    <div class="purple-circle"></div>
+    <div class="yellow-circle"></div>
+    <div class="sky-circle"></div>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a
+            href="https://www.linkedin.com/in/ritik-singh-930327244?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">RITIK
+            SINGH</a>
+        <a href="https://srmu.ac.in/"> <img src="./img/srmulogo.png" alt=""></a>
+
+    </div>
+
+    <div class="container">
+        <h1>SINGLE PRECISION</h1>
+        <div class="input-button-container">
+            <div class="input-container">
+                <input id="decimalInput" type="text" placeholder="Enter a numeric value (e.g., 3.14 or -5)">
+            </div>
+            <div class="button-group">
+                <button onclick="convertToBinary()">Convert</button>
+                <button onclick="resetCarousel()" class="reset-button">Reset</button>
+            </div>
+        </div>
+        <!-- Error Message -->
+        <p id="errorMessage" class="error-message"></p>
+
+        <!-- Carousel Container -->
+        <div class="carousel-container">
+            <button class="carousel-button prev" onclick="scrollCarousel(-1)" disabled>❮</button>
+            <div class="carousel" id="carousel">
+                <!-- Cards will be dynamically inserted here -->
+            </div>
+            <button class="carousel-button next" onclick="scrollCarousel(1)">❯</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&hearts;
+            Made under the guidance of <br>
+            <a href="https://www.linkedin.com/in/dr-alkesh-agrawal-0050a9172?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                target="_blank">Dr. Alkesh Agarwal</a>
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

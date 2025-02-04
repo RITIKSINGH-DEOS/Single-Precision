@@ -1,0 +1,563 @@
+* {
+    font-family: "Montserrat", serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #e5e5e5;
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar a {
+    padding: 0 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: 0.3s;
+    position: relative;
+    /* Required for the underline animation */
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    /* Start with no width */
+    height: 2px;
+    /* Thickness of the underline */
+    background: red;
+    /* Color of the underline */
+    bottom: -5px;
+    /* Position the underline below the text */
+    left: 50%;
+    /* Start from the center */
+    transform: translateX(-50%);
+    /* Center the underline */
+    transition: width 0.3s ease;
+    /* Smooth transition for the width */
+}
+
+.navbar a:hover::after {
+    width: 100%;
+    /* Expand the underline to full width on hover */
+}
+
+.navbar img {
+    height: 40px;
+    width: 40px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    flex: 1;
+}
+
+h1 {
+    margin-top: 75px;
+    font-size: 1.7rem;
+    text-align: center;
+    margin-bottom: 15px;
+    transition: 0.2s;
+    position: relative;
+    /* Required for the underline animation */
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    /* Start with no width */
+    height: 2px;
+    /* Thickness of the underline */
+    background: red;
+    /* Color of the underline */
+    bottom: -5px;
+    /* Position the underline below the text */
+    left: 50%;
+    /* Start from the center */
+    transform: translateX(-50%);
+    /* Center the underline */
+    transition: width 0.3s ease;
+    /* Smooth transition for the width */
+}
+
+h1:hover::after {
+    width: 100%;
+    /* Expand the underline to full width on hover */
+}
+
+.input-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 90%;
+    max-width: 400px;
+    margin-bottom: 10px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+input {
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.sign-button {
+    padding: 8px 16px;
+    background: red;
+    color: white;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 10px;
+    transition: background 0.3s ease;
+}
+
+.sign-button:hover {
+    background: #c82333;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    display: none;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+}
+
+button {
+    padding: 8px 16px;
+    background: red;
+    color: white;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #c82333;
+}
+
+.reset-button {
+    background: red;
+}
+
+.reset-button:hover {
+    background: #c82333;
+}
+
+/* Carousel Container */
+.carousel-container {
+    position: relative;
+    width: 85%;
+    max-width: 600px;
+    margin: 15px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+    scroll-behavior: smooth;
+}
+
+.card {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    background: rgb(15, 15, 15);
+    border: 0.1px solid rgb(117, 116, 116);
+    border-left: none;
+    border-right: none;
+    padding: 15px;
+    cursor: pointer;
+    box-shadow: rgba(58, 55, 55, 0.35) 0px 5px 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: rgba(203, 194, 194, 0.35) 0px 5px 15px;
+}
+
+.card button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    border: none;
+    background: red;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.card button:hover {
+    background: #c82333;
+}
+
+.result {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Carousel Buttons */
+.carousel-button {
+    background: red;
+    border: 2px solid white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    position: absolute;
+    z-index: 1000;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-button.prev {
+    left: -40px;
+}
+
+.carousel-button.next {
+    right: -40px;
+}
+
+.carousel-button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Hide scrollbar */
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* Footer */
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
+    font-size: 1rem;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: 0.3s;
+    position: relative;
+    /* Required for the underline animation */
+}
+
+footer a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    /* Start with no width */
+    height: 2px;
+    /* Thickness of the underline */
+    background: red;
+    /* Color of the underline */
+    bottom: -5px;
+    /* Position the underline below the text */
+    left: 50%;
+    /* Start from the center */
+    transform: translateX(-50%);
+    /* Center the underline */
+    transition: width 0.3s ease;
+    /* Smooth transition for the width */
+}
+
+footer a:hover::after {
+    width: 100%;
+    /* Expand the underline to full width on hover */
+}
+
+.red-circle {
+    background-color: rgba(204, 68, 68, 0.954);
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    position: absolute;
+    left: 200px;
+    top: 100px;
+    box-shadow: 0 0 15px 10px rgba(204, 68, 68, 0.954);
+    animation: redcircle 4s 1s infinite alternate;
+}
+
+@keyframes redcircle {
+    0% {
+        left: 200px;
+    }
+
+    100% {
+        left: 230px;
+        width: 135px;
+        height: 135px;
+
+    }
+}
+
+.purple-circle {
+    background-color: rgba(178, 78, 236, 0.954);
+    width: 125px;
+    height: 125px;
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    top: 450px;
+    left: 1000px;
+    box-shadow: 0 0 15px 10px rgba(178, 78, 236, 0.954);
+    animation: purplecircle 4s 1s infinite alternate;
+}
+
+@keyframes purplecircle {
+    0% {
+        left: 1000px;
+
+    }
+
+    100% {
+        left: 1030px;
+        width: 135px;
+        height: 135px;
+    }
+}
+
+
+.yellow-circle {
+    background-color: rgba(236, 199, 78, 0.954);
+    width: 70px;
+    height: 70px;
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    top: 90px;
+    left: 1200px;
+    box-shadow: 0 0 15px 10px rgba(235, 204, 101, 0.954);
+    animation: yellowcircle 4s 1s infinite alternate;
+}
+
+@keyframes yellowcircle {
+    0% {
+        left: 1200px;
+
+    }
+
+    100% {
+        left: 1220px;
+        width: 80px;
+        height: 80px;
+    }
+}
+
+
+.sky-circle {
+    background-color: rgba(78, 217, 236, 0.954);
+    width: 70px;
+    height: 70px;
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    top: 500px;
+    left: 130px;
+    box-shadow: 0 0 15px 10px rgba(99, 218, 234, 0.954);
+    animation: skycircle 4s 1s infinite alternate;
+}
+
+@keyframes skycircle {
+    0% {
+        left: 130px;
+
+    }
+
+    100% {
+        left: 150px;
+        width: 80px;
+        height: 80px;
+    }
+}
+
+
+/* Responsive Design for Mobile Phones */
+@media (max-width: 475px) {
+    .navbar a {
+        font-size: 1.5rem;
+    }
+
+    h1 {
+        margin-top: 150px;
+        font-size: 1.5rem;
+    }
+
+    input {
+        font-size: 0.9rem;
+        width: 80%;
+    }
+
+    .error-message {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+    .input-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .input-container #decimalInput {
+        width: 100%;
+        height: 25px;
+    }
+
+    button {
+        padding: 15px 25px;
+    }
+
+    .carousel-container {
+        width: 85%;
+    }
+
+    .card {
+        padding: 20px;
+        width: 80%;
+        background-color: black;
+        border: none;
+    }
+
+    .card button {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+
+    .result {
+        font-size: 0.9rem;
+    }
+
+    .carousel-button {
+        padding: 20px;
+        font-size: 1rem;
+    }
+
+    .carousel-button.prev {
+        left: -30px;
+    }
+
+    .carousel-button.next {
+        right: -30px;
+    }
+
+    footer {
+        font-size: .9rem;
+        padding-bottom: 75px;
+    }
+
+    .yellow-circle {
+        display: none;
+    }
+
+    .purple-circle {
+        display: none;
+    }
+
+    .red-circle {
+        background-color: rgba(204, 68, 68, 0.954);
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        position: absolute;
+        left: 280px;
+        top: 100px;
+        box-shadow: 0 0 15px 10px rgba(204, 68, 68, 0.954);
+        animation: redcircle 4s 1s infinite alternate;
+    }
+
+    @keyframes redcircle {
+        0% {
+            left: 280px;
+        }
+
+        100% {
+            left: 300px;
+            width: 90px;
+            height: 90px;
+
+        }
+    }
+
+    .sky-circle {
+        background-color: rgba(78, 217, 236, 0.954);
+        width: 60px;
+        height: 60px;
+        border: none;
+        border-radius: 50%;
+        position: absolute;
+        top: 640px;
+        left: 40px;
+        box-shadow: 0 0 15px 10px rgba(99, 218, 234, 0.954);
+        animation: skycircle 4s 1s infinite alternate;
+    }
+
+    @keyframes skycircle {
+        0% {
+            left: 40px;
+
+        }
+
+        100% {
+            left: 60px;
+            width: 70px;
+            height: 70px;
+        }
+    }
+}
